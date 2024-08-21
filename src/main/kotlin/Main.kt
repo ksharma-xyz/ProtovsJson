@@ -1,12 +1,40 @@
 package org.example
 
+import Address
+import Company
 import Person
 import com.google.gson.Gson
 import kotlin.system.measureTimeMillis
 
+val person = Person(
+    name = "John Doe",
+    age = 30,
+    email = "johndoe@example.com",
+    address = Address(
+        state = "ABC", street = "1 Station Street", city = "City", zip = "1111",
+    ),
+    companies = listOf(
+        Company(
+            name = "C1",
+            role = "Associate Engineer"
+        ),
+        Company(
+            name = "C2",
+            role = "Engineer"
+        ),
+        Company(
+            name = "C3",
+            role = "Sr. Engineer"
+        ),
+        Company(
+            name = "C4",
+            role = "Sr. Engineer"
+        ),
+    ),
+    phone_numbers = listOf("05363377382", "036372882", "0372822727")
+)
+
 fun main() {
-    // Create a sample data object
-    val person = Person(name = "John Doe", age = 30, email = "johndoe@example.com")
 
     // Initialize Gson instance
     val gson = Gson()
@@ -24,13 +52,16 @@ fun main() {
     repeat(repetitions) {
         // JSON serialization and deserialization
         val json = gson.toJson(person)
-        val personFromJson:Person = gson.fromJson(json, Person::class.java)
+        val personFromJson: Person = gson.fromJson(json, Person::class.java)
 
         // Protobuf serialization and deserialization (using an assumed Protobuf-generated class)
         val personProto = Person.Builder()
             .name(person.name)
             .age(person.age)
             .email(person.email)
+            .address(person.address)
+            .companies(person.companies)
+            .phone_numbers(person.phone_numbers)
             .build()
 
         val personBytes = personProto.encode()
@@ -67,9 +98,9 @@ fun main() {
     val averageProtobufSerializationTime = totalProtobufSerializationTime / repetitions
     val averageProtobufDeserializationTime = totalProtobufDeserializationTime / repetitions
 
-    // Print out the average times
-    println("Average JSON Serialization time: $averageJsonSerializationTime ms")
-    println("Average JSON Deserialization time: $averageJsonDeserializationTime ms")
-    println("Average Protobuf Serialization time: $averageProtobufSerializationTime ms")
-    println("Average Protobuf Deserialization time: $averageProtobufDeserializationTime ms")
+    /* // Print out the average times
+     println("Average JSON Serialization time: $averageJsonSerializationTime ms")
+     println("Average JSON Deserialization time: $averageJsonDeserializationTime ms")
+     println("Average Protobuf Serialization time: $averageProtobufSerializationTime ms")
+     println("Average Protobuf Deserialization time: $averageProtobufDeserializationTime ms")*/
 }
