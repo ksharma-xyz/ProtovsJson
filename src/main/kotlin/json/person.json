@@ -1,0 +1,88 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "email": "johndoe@example.com",
+  "address": {
+    "state": "ABC",
+    "street": "1 Station Street",
+    "city": "City",
+    "zip": "1111",
+    "country": "India",
+    "latitude": 10.0,
+    "longitude": 10.0
+  },
+  "companies": [
+    {
+      "name": "C1",
+      "role": "Associate Engineer",
+      "employee_count": 1000,
+      "locations": ["Sydney", "Melbourne", "India"],
+      "metadata": {
+        "Key1": "Value1",
+        "key2": "value2"
+      }
+    },
+    {
+      "name": "C2",
+      "role": "Engineer",
+      "employee_count": 1000,
+      "locations": ["Sydney", "Melbourne", "India"],
+      "metadata": {
+        "Key1": "Value1",
+        "key2": "value2"
+      }
+    },
+    {
+      "name": "C3",
+      "role": "Sr. Engineer",
+      "employee_count": 1000,
+      "locations": ["Sydney", "Melbourne", "India"],
+      "metadata": {
+        "Key1": "Value1",
+        "key2": "value2"
+      }
+    },
+    {
+      "name": "C4",
+      "role": "Sr. Engineer",
+      "employee_count": 1000,
+      "locations": ["Sydney", "Melbourne", "India"],
+      "metadata": {
+        "Key1": "Value1",
+        "key2": "value2"
+      }
+    }
+  ],
+  "phone_numbers": ["05363377382", "036372882", "0372822727"],
+  "education": [
+    {
+      "school_name": "School 1",
+      "degree": "Computers",
+      "field_of_study": "Engineering",
+      "graduation_year": 1900
+    },
+    {
+      "school_name": "School 2",
+      "degree": "Science",
+      "field_of_study": "Engineering",
+      "graduation_year": 1905
+    }
+  ],
+  "social_media_profiles": [
+    {
+      "platform": "Fb",
+      "username": "fb123",
+      "followers_count": 10000
+    },
+    {
+      "platform": "insta",
+      "username": "insta1",
+      "followers_count": 10000
+    }
+  ],
+  "is_married": false,
+  "preferences": {
+    "Pre1": "A",
+    "Pref2": "B"
+  }
+}
