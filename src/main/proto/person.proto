@@ -5,11 +5,30 @@ message Address {
   string city = 2;
   string state = 3;
   string zip = 4;
+  string country = 5; // Added country field
+  float latitude = 6; // Added latitude for geolocation
+  float longitude = 7; // Added longitude for geolocation
 }
 
 message Company {
   string name = 1;
   string role = 2;
+  int32 employee_count = 3; // Added employee count
+  repeated string locations = 4; // Added locations as repeated string
+  map<string, string> metadata = 5; // Added metadata map for additional information
+}
+
+message Education {
+  string school_name = 1;
+  string degree = 2;
+  string field_of_study = 3;
+  int32 graduation_year = 4;
+}
+
+message SocialMedia {
+  string platform = 1;
+  string username = 2;
+  int32 followers_count = 3;
 }
 
 message Person {
@@ -19,4 +38,8 @@ message Person {
   Address address = 4;
   repeated Company companies = 5;
   repeated string phone_numbers = 6;
+  repeated Education education = 7; // Added repeated Education message
+  repeated SocialMedia social_media_profiles = 8; // Added repeated SocialMedia message
+  bool is_married = 9; // Added optional boolean field
+  map<string, string> preferences = 10; // Added preferences map
 }
