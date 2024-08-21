@@ -29,8 +29,6 @@ dependencies {
     testImplementation(kotlin("test"))
 
     implementation ("com.google.code.gson:gson:2.10.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-    implementation("com.google.protobuf:protobuf-java:3.23.4")
 }
 
 tasks.test {

@@ -79,7 +79,7 @@ fun main() {
     // Initialize Gson instance
     val gson = Gson()
 
-    // Number of repetitions for averaging
+    // Number of repetitions
     val repetitions = 10_000
 
     // Variables to accumulate time
@@ -92,7 +92,6 @@ fun main() {
     repeat(repetitions) {
         // JSON serialization and deserialization
         val json = gson.toJson(person)
-        val personFromJson: Person = gson.fromJson(json, Person::class.java)
 
         // Protobuf serialization and deserialization (using an assumed Protobuf-generated class)
         val personProto = Person.Builder()
@@ -131,16 +130,4 @@ fun main() {
     println("Total JSON Deserialization time: $totalJsonDeserializationTime ms")
     println("Total Protobuf Serialization time: $totalProtobufSerializationTime ms")
     println("Total Protobuf Deserialization time: $totalProtobufDeserializationTime ms")
-
-  /*  // Calculate averages
-    val averageJsonSerializationTime = totalJsonSerializationTime / repetitions
-    val averageJsonDeserializationTime = totalJsonDeserializationTime / repetitions
-    val averageProtobufSerializationTime = totalProtobufSerializationTime / repetitions
-    val averageProtobufDeserializationTime = totalProtobufDeserializationTime / repetitions
-
-    *//* // Print out the average times
-     println("Average JSON Serialization time: $averageJsonSerializationTime ms")
-     println("Average JSON Deserialization time: $averageJsonDeserializationTime ms")
-     println("Average Protobuf Serialization time: $averageProtobufSerializationTime ms")
-     println("Average Protobuf Deserialization time: $averageProtobufDeserializationTime ms")*/
 }
